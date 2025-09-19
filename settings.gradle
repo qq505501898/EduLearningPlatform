@@ -1,0 +1,33 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://jitpack.io" }
+        jcenter()
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "https://maven.aliyun.com/repository/releases" }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "https://maven.aliyun.com/repository/releases" }
+
+    }
+}
+// ✅ 关键：启用 VERSION_CATALOGS 功能
+rootProject.name = "cbs"
+include ':app'
+include ':learningPlatform'
